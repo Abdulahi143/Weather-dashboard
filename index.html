@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css?v=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <title>Weather Forecast</title>
+  </head>
+  <body>
+    <div class="aside-header">
+      <!-- <aside class="aside">
+        <ul class="nav__list flex">
+          <li class="nav__item flex">
+            <i class="fa-solid fa-house"></i>
+            <a href="#" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item flex">
+            <i class="fa-regular fa-compass"></i>
+            <a href="#" class="nav__link">Forecast</a>
+          </li>
+          <li class="nav__item flex">
+            <i class="fa-solid fa-location-dot"></i>
+            <a href="#" class="nav__link">Locations</a>
+          </li>
+          <li class="nav__item flex">
+            <i class="fa-solid fa-chart-pie"></i>
+            <a href="#" class="nav__link">Analytics</a>
+          </li>
+          <li class="nav__item flex">
+            <i class="fa-regular fa-calendar-days"></i>
+            <a href="#" class="nav__link">Calendar</a>
+          </li>
+          <li class="nav__item flex">
+            <i class="fa-solid fa-gear"></i>
+            <a href="#" class="nav__link">Settings</a>
+          </li>
+        </ul>
+      </aside> -->
+      <div class="main-content">
+        <header class="header flex">
+          <div class="search-container">
+            <input
+              type="text"
+              placeholder="Search here..."
+              class="search-input"
+            />
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          </div>
+          <div class="user-icons flex">
+            <i class="fa-regular fa-bell"></i>
+            <i class="fa-regular fa-user"></i>
+            <img src="/users/me.PNG" alt="" class="user-image" />
+          </div>
+        </header>
+        <main class="main">
+          <section class="weather-section grid">
+            <div class="left-side flex">
+              <div class="top-side grid">
+                <div class="current-location flex">
+                  <span class="location-span">Current Location</span>
+                  <h4 class="section-titles">Los Angeles, CA, USA</h4>
+                  <div class="current-location-img">
+                    <div class="image-overlay flex">
+                      <div class="icon-degree flex">
+                        <i class="fa-solid fa-cloud"></i>
+                        <h2>12<sup>ºC</sup></h2>
+                      </div>
+                      <div class="day-time flex">
+                        <span>Monday, 7:34 AM</span>
+                        <span
+                          ><i class="fa-solid fa-cloud"></i> Partly Cloudy</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <i class="fa-solid fa-bullseye"></i> -->
+                <div class="add-city flex">
+                  <span> <i class="fa-solid fa-plus"></i></span>
+                  <span>Add City</span>
+                </div>
+              </div>
+
+              <div class="bottom-side">
+                <div>
+                  <h4 class="section-titles">Today's Highlights</h4>
+                  <div class="highlights-stats flex">
+                    <div class="higlights grid">
+                      <div class="higlight flex">
+                        <span class="higlight-mood">Precipitation</span>
+                        <span class="higlight-numbers">2%</span>
+                      </div>
+                      <div class="higlight flex">
+                        <span class="higlight-mood">Humidity</span>
+                        <span class="higlight-numbers">87%</span>
+                      </div>
+                      <div class="higlight flex">
+                        <span class="higlight-mood">Wind</span>
+                        <span class="higlight-numbers">0 km/h</span>
+                      </div>
+                      <div class="higlight flex">
+                        <span class="higlight-mood">Sunrise & Sunset</span>
+                        <div class="sunrise-sunset-wrapper">
+                          <span class="sunrise-sunset higlight-numbers">
+                            <i class="fa-solid fa-arrow-up arrow"></i> 6:18 AM
+                          </span>
+                          <span class="sunrise-sunset higlight-numbers">
+                            <i class="fa-solid fa-arrow-down-long arrow"></i>
+                            7:27 PM
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="chart-container">
+                    <div class="chart-header flex">
+                      <button id="todayBtn" class="active">Today</button>
+                      <button id="weekBtn">Week</button>
+                    </div>
+                    <canvas id="weatherChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-section">
+              <div class="bars flex">
+                <h4 class="section-titles">Chance of Rain</h4>
+                <div class="higlight chance-of-rain flex">
+                  <canvas id="myChart"></canvas>
+                </div>
+              </div>
+
+              <div class="bottom-right">
+                <div class="forecast">
+                  <h4 class="section-titles">3 Days Forecast</h4>
+                  <div class="forecast-day flex">
+                    <div class="temp flex">
+                      <i class="fa-solid fa-arrow-up arrow"></i>
+                      <span>26°</span>
+                      <i class="fa-solid fa-arrow-down arrow"></i>
+                      <span>11°</span>
+                    </div>
+                    <div class="day-info">
+                      <i class="fa-solid fa-cloud weather-icon"></i>
+                      <div class="day-weather flex">
+                        <div class="day">Tuesday</div>
+                        <div class="weather">Cloudy</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="forecast-day flex">
+                    <div class="day-info flex">
+                      <i class="fa-solid fa-cloud-rain weather-icon"></i>
+                      <div class="day-weather flex">
+                        <div class="day">Wednesday</div>
+                        <div class="weather">Rainy</div>
+                      </div>
+                    </div>
+                    <div class="temp center-temp flex">
+                      <i class="fa-solid fa-arrow-up arrow"></i>
+                      <span>26°</span>
+                      <i class="fa-solid fa-arrow-down arrow"></i>
+                      <span>11°</span>
+                    </div>
+                  </div>
+                  <div class="forecast-day flex">
+                    <div class="temp flex">
+                      <i class="fa-solid fa-arrow-up arrow"></i
+                      ><span>26°</span>
+                      <i class="fa-solid fa-arrow-down arrow"></i>
+                      <span>11°</span>
+                    </div>
+                    <div class="day-info">
+                      <i class="fa-solid fa-snowflake weather-icon"></i>
+                      <div class="day-weather flex">
+                        <div class="day">Thursday</div>
+                        <div class="weather">Snowfall</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="weather.js"></script>
+  </body>
+</html>

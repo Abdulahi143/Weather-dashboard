@@ -178,14 +178,6 @@ img {
 }
 
 .left-side {
-  width: 100%;
-}
-
-.top-side {
-  width: 100%;
-}
-
-.left-side {
   flex-direction: column;
   gap: 2em;
 }
@@ -481,4 +473,31 @@ img {
   border: 2px solid #dddddd;
   padding: 1em; /* Adjust padding if needed */
   position: relative;
+}
+
+@media (max-width: 968px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+  }
+
+  .weather-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .top-side {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .higlights {
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+  }
 }

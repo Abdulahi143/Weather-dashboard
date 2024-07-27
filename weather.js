@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       datasets: [
         {
-        //   label: "Chance of Rain (%)",
+          label: "Chance of Rain (%)",
           data: [20, 30, 50, 70, 60, 40],
           backgroundColor: ["rgba(54, 162, 235, 0.2)"],
           borderColor: ["rgba(54, 162, 235, 1)"],
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     options: {
       plugins: {
     legend: {
-        display: false
+        display: true
     },
         datalabels: {
           display: true,
